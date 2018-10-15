@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Footer extends Component {
-  render() {
-    return (
-      <footer>&copy; Jesuskata {(new Date()).getFullYear()}</footer>
-    );
-  }
+const Footer = () => { // Since we don't have props, we can directly return our JSX
+  return (
+    <footer>&copy; Jesuskata {(new Date()).getFullYear()}</footer>
+  );
 }
 
 export default Footer;
