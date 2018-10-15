@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header title="Welcome to JesusKata"/>
+        <Header title="Welcome to React"/>
         <Content>
           <Home />
         </Content>
