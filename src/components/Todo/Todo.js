@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import uuidv4 from 'uuid'
+import uuidv4 from 'uuid';
 import List from './List';
 import './Todo.css';
 
@@ -52,36 +52,32 @@ class Todo extends Component {
 
     // Once is submited, we reset the task value and we push
     // the new task to the items array
-    if (this.state.task.trim() !== '') {
-      this.setState({
-        task: '',
-        items: [
-          ...this.state.items,
-          {
-            id: uuidv4(),
-            task: this.state.task,
-            completed: false
-          }
-        ]
-      });
-    }
+    this.setState({
+      task: '',
+      items: [
+        ...this.state.items,
+        {
+          id: uuidv4(),
+          task: this.state.task,
+          completed: false
+        }
+      ]
+    });
   }
 
   markAsCompleted = id => {
     // Find the task by id...
-    const foundTask = this.state.items.find(
-      task => task.id === id
-    );
+    const foundTask = this.state.items.find(task => task.id === id)
+
     console.log("This is the foundTask: ", foundTask);
 
-    // Updating the completed statue...
+    // Updating the completed status...
     foundTask.completed = true;
 
     // Updating the state with the new updated task...
     this.setState({
       items: [
         ...this.state.items,
-        ...foundTask
       ]
     });
   }
@@ -116,7 +112,7 @@ class Todo extends Component {
           removeTask={this.removeTask}
         />
       </div>
-    )
+    );
   }
 }
 

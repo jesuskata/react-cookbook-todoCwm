@@ -5,7 +5,7 @@ const List = props => (
     {props.items.map((item, key) => (
         <li
           key={key}
-          className={`${item.completed ? 'complete' : 'pending'}`}
+          className={`${item.completed ? 'completed' : 'pending'}`}
         >
           {/*
             * If the task is completed, we assign the
